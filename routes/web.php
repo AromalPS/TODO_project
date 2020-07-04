@@ -14,13 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', ['name' => 'Aro website']);
 });
 
 Route::get('/about-us',function(){
-    return "<h1>About us</h1>";
+    return view('about', ['name' => 'About us']);
 });
 
 Route::get('/contact-us',function(){
-    return "<h1>Contact us</h1>";
+    return view('contact', ['name' => 'Contact us']);
 });
