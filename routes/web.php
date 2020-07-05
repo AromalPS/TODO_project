@@ -13,10 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function(){
-    return view('home');
-});
+Route::get('/', "TodoController@home")->name('home');
 
-Route::get('/update',function(){
-    return view('update');
-});
+Route::post('/create',"TodoController@store")->name('store');
+
+Route::get('/update',"TodoController@update");
