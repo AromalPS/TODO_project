@@ -13,13 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome', ['name' => 'Aro website']);
-});
+Route::get('/', "TodoController@home");
 
-Route::get('/about-us',function(){
-    return view('about', ['name' => 'About us']);
-});
+Route::get('/about-us',"TodoController@about");
 
 Route::get('/contact-us',function(){
     return view('contact', ['name' => 'Contact us']);
