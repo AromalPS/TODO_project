@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', "TodoController@home");
+Route::get('/', function(){
+    return view('home');
+});
 
-Route::get('/about-us',"TodoController@about");
-
-Route::get('/contact-us',function(){
-    return view('contact', ['name' => 'Contact us']);
+Route::get('/update',function(){
+    return view('update');
 });
