@@ -17,4 +17,6 @@ Route::get('/', "TodoController@home")->name('home');
 
 Route::post('/create',"TodoController@store")->name('store');
 
-Route::get('/update',"TodoController@update");
+Route::get('/edit/{todo}', "TodoController@edit")->name('edit');
+
+Route::post('/update/{todo}',"TodoController@update")->name('update');

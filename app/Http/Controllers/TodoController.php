@@ -26,7 +26,20 @@ public function store(Request $request){
     return redirect(route('home'));
 }
 
-public function update(){
-    return view('update');
+public function edit(Todo $todo){
+//    $todo = Todo::findorfail($id);
+//    dd($todo);
+    return view('update',compact('todo'));
+}
+
+public function update(Request $request, Todo $todo){
+    $validateData = $request->validate([
+        'title'=> 'required|max:124'
+    ]);
+//    dd($validateData);
+//    $todo -> title=$validateData['title'];
+//    $todo->save();
+    $todo->update($validateData);
+    return redirect(route('home'));
 }
 }
