@@ -42,4 +42,9 @@ public function update(Request $request, Todo $todo){
     $todo->update($validateData);
     return redirect(route('home'));
 }
+
+public function delete(Todo $todo){
+    $todo->delete();
+    return back();
+}
 }
